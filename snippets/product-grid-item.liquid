@@ -1,0 +1,8 @@
+<article class="product-item">
+	<div class="product-image"><a href="{{ product.url | within: collection }}" title="{{ product.featured_image.alt | escape }}"><img src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}"></a></div>
+	<div class="product-infobar">
+		<p class="product-name">{{ product.title }}</p>
+		<p class="product-status">{% if product.available %}available{% else %}sold{% endif %}</p>
+		<p class="product-price">{{ product.price | money }}</p>
+	</div>
+</article>

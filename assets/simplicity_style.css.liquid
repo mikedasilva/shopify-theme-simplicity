@@ -1,0 +1,364 @@
+/** 
+ * BlushBeads
+ * A Shopify theme. 
+ *
+ * Last update: March 31, 2012
+ * 
+ * @version     1.0
+ * @author      
+ * @theme_url   
+ *
+ */
+
+
+
+
+
+
+
+
+/** 
+ * Zoomy product gallery, with thumbs
+ * @see https://github.com/benwatts/enhance-gallery
+ */
+
+#product-gallery,
+#active-wrapper{
+  width: 303px;
+  }  
+
+#active-wrapper{
+  position: relative;
+  min-height: 50px; 
+  overflow: hidden; 
+  margin: 0 0 10px 0; 
+  }
+#active-wrapper img{
+  display: block;
+  width: auto;
+  }
+#active-wrapper .zoomed{
+  position: absolute;
+  top: 0; 
+  left: 0;
+  }
+
+#active-image-loading{
+  background: #fff url({{ 'icon-loading.gif' | asset_url }}) 50% 50% no-repeat; 
+  width: 40px;
+  height: 40px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  position: absolute;
+  top: 42%;
+  left: 42%;
+  z-index: 2;
+  text-indent: -900em; overflow: hidden;  
+  }
+
+#thumbs{
+  margin: 0;
+  list-style: none;
+  }
+#thumbs li{
+  float: left;
+  margin: 0 8px 8px 0;
+  width: 54px;
+  height: 54px;   
+  text-align: center; 
+  }  
+.no-js #thumbs li{ margin-right: 6px; }
+#thumbs li.last-in-row{
+  margin-right: 0;
+  }
+#thumbs a{
+  display: block;
+  border: solid 1px {{ settings.content_secondary_colour }};
+  padding: 1px;
+  }
+#thumbs a:hover{
+  border: solid 1px {{ settings.content_link_hover_colour }};
+  }
+#thumbs img{
+  margin: 0 auto;
+  display: block;
+  }   
+
+  
+  
+
+/*
+ * Page header / nav
+ */
+.btn-navbar {
+
+}
+.navbar-inner {
+ background-color: #ffffff;	
+ background-image: none;
+ filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=3);
+}
+.navbar .brand {
+	float: left;
+	margin-left:auto;
+	margin-right:60px;
+	padding-right: 0;
+	padding-left: 0;
+	color: {{settings.logo_colour}};
+}
+.navbar .nav > li > a {
+	line-height:44px;
+	font-size:18px;
+	color:#333333;
+}
+
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover {
+	background-color: #41B7D8;
+}
+
+.navbar .nav > li > a:hover {
+	color: #41B7D8;
+}
+
+.social-icons > a{
+	float:right;
+	padding-top:20px;
+	padding-left:10px;
+	color: #333333;
+	font-size: 50px;
+}
+
+.social-icons > a:hover {
+	text-decoration: none;
+}
+.cart-icons > a{
+	float:right;
+	margin-top:20px;
+	padding-right:10px;
+	padding-left:30px;
+	line-height:26px;
+	color: #41B7D8;
+	font-size: 25px;
+	background: url({{'cart-icon-user-uploaded.png' | asset_url }}) 0 0 no-repeat;
+}
+.cart-icons > a:hover {
+	text-decoration: none;
+}
+.cart-icons > a > i{
+	margin-right:5px;
+}
+.subhead > h1, .jumbotron > h1 {
+	font-size:40px;
+}
+.subhead {
+    margin-bottom: 9px;
+    padding-bottom: 0;
+}
+.jumbotron h1 {
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 9px;
+}
+.jumbotron {
+    position: relative;
+}
+
+
+/*
+ * Page details
+ */
+body {
+	background-color: #f2f2f2;
+	padding-left:0px;
+	padding-right:0px;
+}
+.container {
+	max-width:960px;
+}
+
+.span3 {
+	width:220px;
+}
+.floatLeft {
+	float:left;
+}
+.floatRight {
+	float:right;
+}
+ul.horizontal-list li{
+	display:inline;
+}
+p {
+	font-size: 17px;
+	line-height: 24px;
+}
+.hidden { display: none; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.main-content {
+	padding-top:90px;
+}
+
+/*
+ * Product listings
+ */
+#product-listing {
+	max-width:960px;
+	margin: 0 auto;
+	padding-top:10px;
+}
+.product-item {
+ background-color: #787878;
+ float: left;
+ margin-left:9px;
+ margin-right:9px;
+ position: relative;
+ width: 302px;
+ margin-bottom:20px;
+ padding-top:1px;
+}
+.product-item > .product-image {
+	max-width:300px;
+	margin:auto;
+}
+.product-image img {
+	max-width: 100%;
+}
+.product-item > .product-infobar{
+ background-color: #787878;
+ background-image: url("../images/100-90-5.png");
+ color: #ffffff;
+ width: 100%;
+ padding-left: 0px;
+ display:inline-block;
+}
+.product-infobar > .product-price{
+ float: right;
+ margin:0px;
+ margin-right: 3px;
+ padding:0px;
+ font-weight: bold;
+}
+.product-infobar > .product-status{
+ float: left;
+ margin:0px 0px 0px 5px;
+ padding:0px;
+}
+.product-infobar > .product-name{
+ margin:0px 0px 0px 5px;
+ padding:0px;
+ font-weight: bold;
+}
+
+/*
+ * Product details
+ */
+#product-details {
+	padding-bottom:40px;
+}
+.product-detail > .product-image{
+	float:left;
+}
+.product-detail .product-more-images {
+	clear:both;
+	max-width:320px;
+}
+.product-detail .product-detail-rightwrapper {
+	float:left;
+	padding-left:40px;
+	max-width:540px;
+}
+.product-detail .product-detail-leftwrapper {
+	float:left;
+	padding-bottom: 50px;
+}
+.product-detail .product-share-bar {
+	clear:both;
+	padding-top:20px;
+	border-top: 1px solid #D8D8D7;
+}
+.product-detail .product-share-bar dt{
+	width:inherit;
+	margin-right: 10px;
+}
+.product-detail .product-share-bar dd{
+	margin-left:inherit;
+	padding-left: 10px;
+}
+.product-detail .product-share-bar li {
+	vertical-align: top;
+}
+.product-detail .product-cart-bar {
+	font-size: 25px;
+	padding-top:20px;
+	padding-bottom: 50px;
+}
+.share-icon {
+	font-size: 30px;
+}
+
+/* CART */
+input.cart.quantity {
+	width: inherit;
+}
+table.items {
+	border: 1px solid #DDDDDD;
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 20px;
+}
+#cartform table td {
+	padding: 5px;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #DDDDDD;
+}
+#checkout-proceed {
+	float: right;
+}
+#checkout-addnote {
+	float: left;
+}
+#add-to-cart-msg {
+	float: right;
+	padding: 5px;
+}
+
+/* FOOTER */
+.footer-bar {
+	clear: both;
+	background-color: #41B7D8;
+	background-image: url("{{ 'background-gradient-user-uploaded.png' | asset_url }}");
+	padding-top:20px;
+}
+.footer-bar .primary {
+    color: #ffffff;
+    font-size: 19px;
+    line-height: 23px;
+    margin-bottom: 5px;
+    text-transform: none;
+}
+.footer-bar {
+	font-size:15px;
+	min-height: 150px;
+}
+.footer-bar li > a {
+	text-decoration: none;
+	color: #333333;
+}
+.footer-bar li > a:hover {
+	color: #F2F2F2;
+}
+.footer-bar .footer-logo {
+	margin-top:10px;
+}
+
+/* CONTACT FORM */
+#contact-form {
+	list-style: none outside none;	
+}
