@@ -1,3 +1,4 @@
 .DS_Store
 config.yml
 .shopify-tmbundle
+*.zip
