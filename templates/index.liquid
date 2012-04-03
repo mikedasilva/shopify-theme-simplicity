@@ -1,0 +1,74 @@
+<div id="col-main">
+
+  {% include 'carousel' %}
+  {% include 'if-shop-has-no-products' %}
+
+  {% if settings.home_featured_collection and collections[settings.home_featured_collection].products != empty %}
+
+    {% assign featuredCollection = collections[settings.home_featured_collection] %}
+    
+    <!-- Three featured products -->
+    <section class="products-prominent clearfix diagonal-divider">
+
+      <header class="section-details clearfix {% if settings.home_featured_header_show == false %}visuallyhidden{% endif %}">
+        <h2 class="section-title">{{ featuredCollection.title | link_to: featuredCollection.url }}</h2>
+        {% if featuredCollection.products.size > 3 %}
+          <div class="view-more">{{ 'View More &raquo;' | link_to: featuredCollection.url }}</div>
+        {% endif %}
+      </header>    
+
+      <ul id="featured-grid" class="product-grid wide">
+
+        {% for product in featuredCollection.products offset: 0 limit: 3 %}
+        <li class="product {% if forloop.last %}last-in-row{% endif %}">
+          <a class="product-photo" href="{{ product.url | within: collection }}" title="{{ product.featured_image.alt | escape }}">
+            <img src="{{ product.featured_image | product_img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}" />
+          </a>
+          <div class="product-information">
+            <span class="product-price">
+              {% if product.price_varies %}
+                <small>from</small> {{ product.price_min | money }}
+              {% else %}
+                {{ product.price_min | money }}
+              {% endif %}
+            </span>
+
+            <h3><a href="{{ product.url | within: collection }}">{{ product.title }}</a></h3>
+
+            {% if settings.show_featured_desc %}
+              <p>{{ product.description | strip_html | truncatewords: 40 }}</p>
+            {% endif %}
+          </div>
+        </li><!-- /.product -->
+        {% endfor %}
+
+      </ul>
+
+    </section>
+  {% endif %}
+  
+
+  {% if settings.home_products_collection and collections[settings.home_products_collection].products != empty %}
+
+    {% assign homeCollection = collections[settings.home_products_collection] %}
+
+    <!-- A collection of products -->
+    <section class="diagonal-divider clearfix">
+
+      <header class="section-details clearfix">
+        <h2 class="section-title">{{ homeCollection.title | link_to: homeCollection.url }}</h2>
+      </header>    
+
+      <ul class="product-grid" id="secondary-grid">
+        {% for product in homeCollection.products limit: settings.home_products_limit %}
+        <li{% cycle '', '', '', ' class="last-in-row"' %}>
+          {% include 'product-grid-item' %}
+        </li>
+        {% endfor %}
+      </ul>      
+
+    </section>
+  {% endif %}
+
+
+</div><!-- /#col-main -->

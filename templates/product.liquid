@@ -1,0 +1,92 @@
+<div class="container" >
+<section id="product-details">
+	<p id="add-to-cart-msg"></p>
+	<article class="product-detail">
+		<div class="product-detail-leftwrapper">
+			<div id="product-gallery"{% if settings.main_image_display == 'Zoom-in' %} class="zoom-in"{% endif %}>
+
+		      <div id="active-wrapper">
+		        {% if settings.main_image_display == 'Lightbox' %}
+		        <a href="{{ product.featured_image | product_img_url: 'original' }}" title="{{ product.featured_image.alt | escape }}" rel="fancybox">
+		        {% endif %}     
+		          <img style="max-width:303px" src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.title | escape }}" id="large-thumb" />
+		        {% if settings.main_image_display == 'Lightbox' %}
+		        </a>
+		        {% endif %}
+		      </div>
+			  <p {% if product.images.size == 1 %}class="visuallyhidden"{% endif %}>More images</p>
+		      <ul id="thumbs" {% if product.images.size == 1 %}class="visuallyhidden"{% endif %}>
+		        {% for image in product.images %}
+		        {% unless forloop.first and settings.main_image_display == 'Lightbox' %}
+		        <li>
+		          <a{% if settings.main_image_display == 'Lightbox' %} rel="fancybox"{% endif %} class="gallery" href="{{ image | product_img_url: 'original' }}" title="{{ image.alt | escape }}">
+		            <img src="{{ image | product_img_url: 'thumb' }}" alt="{{ image.alt | escape }}" />
+		          </a>
+		        </li>
+		        {% endunless %}
+		        {% endfor %}
+		      </ul>
+
+		    </div><!-- /#product-gallery -->
+			
+			
+			<div class="product-image"><img src="assets/placeholders/photo1.png"></div>
+			<div class="product-more-images">
+				<ul class="unstyled horizontal-list">
+					<li><img title="" src="assets/placeholders/photo2_thumb.png"></li>
+					<li><img title="" src="assets/placeholders/photo2_thumb.png"></li>
+					<li><img title="" src="assets/placeholders/photo2_thumb.png"></li>
+					<li><img title="" src="assets/placeholders/photo2_thumb.png"></li>
+				</ul>
+			</div>
+		</div>
+		<div class="product-detail-rightwrapper">
+			<div class="product-title">
+				<h1>{{ product.title }}</h1>
+			</div>
+			<div class="product-sku"><p>Sku #{{ product.id }}</p></div>
+			<div class="product-description"><p>{{ product.description }}</p></div>
+			<div class="options product-cart-bar">
+				
+				<ul class="unstyled">
+					<li class="floatLeft"><p class="price"></p></li>
+					<li class="floatRight">
+					{% if product.available %}
+			          <form action="/cart/add" method="post"  id="product-actions" name="add-to-cart">
+			              <div class="variants-wrapper clearfix {% if product.variants.size == 1 %}visuallyhidden{% endif %}"> 
+			                <select id="product-select" name="id">
+			                  {% for variant in product.variants %}
+			                  <option value="{{ variant.id }}">{{ variant.title | escape }} - {{ variant.price | money }}</option>
+			                  {% endfor %}
+			                </select>
+			              </div>
+			              
+			                                                
+							<a id="add-to-cart" class="btn btn-success btn-large" href="javascript:document.forms['add-to-cart'].submit();">
+							<i class="icon-shopping-cart icon-white"></i> Add to Cart</a>
+			                
+			             
+
+			          </form>
+
+			        {% else %}
+			          <div id="product-actions" class="sold-out">
+			            <div id="purchase">
+			              <p class="price">Sold out.</p>      
+			            </div>
+			          </div>      
+			        {% endif %}
+					</li>
+					
+				</ul>
+				
+			</div>
+			
+			{% include 'social-sharing' %} 
+			
+			
+		</div>
+	</article>
+
+</section>
+</div>

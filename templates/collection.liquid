@@ -1,0 +1,30 @@
+<div id="col-main" class="{{ collection.handle }}">
+
+  <section id="product-listing">
+    <header class="jumbotron subhead" id="overview">
+      <h1>{{ collection.title }} <small>{{ collection.all_products_count  }} {{ collection.all_products_count  | pluralize: 'item', 'items' }}</small></h1>
+      {% if collection.description != empty %}
+        <div class="description content">{{ collection.description }}</div>
+      {% endif %}
+    </header>
+
+    {% paginate collection.products by 12 %}
+      {% if collection.products.size > 0 %}
+    
+       
+        {% for product in collection.products %}
+          
+            {% include 'product-grid-item' %}
+
+        {% endfor %}
+        
+
+        {% include 'pagination' %}
+      
+      {% else %}    
+        <strong>No products found in this collection.</strong>
+      {% endif %}
+    {% endpaginate %}
+  </section>
+  
+</div> <!-- /#col-main -->
