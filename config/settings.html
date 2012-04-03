@@ -5,11 +5,15 @@
   <table>
     <tr>
       <td><label for="content_bg_colour">Content Background</label></td>
-      <td><input id="content_bg_colour" name="content_bg_colour" class="color" value="#282C2E" /></td>
+      <td><input id="content_bg_colour" name="content_bg_colour" class="color" value="#f2f2f2" /></td>
     </tr>   
     <tr>
-      <td><label for="content_header_colour">Headers</label></td>
-      <td><input id="content_header_colour" name="content_header_colour" class="color" value="#ffffff" /></td>
+      <td><label for="content_header_colour">Headings</label></td>
+      <td><input id="content_header_colour" name="content_header_colour" class="color" value="#333333" /></td>
+    </tr>
+    <tr>
+      <td><label for="content_subheader_colour">Sub-headings</label></td>
+      <td><input id="content_subheader_colour" name="content_subheader_colour" class="color" value="#787878" /></td>
     </tr>   
     <tr>
       <td><label for="content_text_colour">Text</label></td>
@@ -240,6 +244,10 @@
         </select>     
       </td>
     </tr>
+    <tr>
+      <td><label for="header_bg_colour">Background colour</label></td>
+      <td><input id="header_bg_colour" name="header_bg_colour" class="color" value="#ffffff" /></td>
+    </tr>
   </table>
 
   <br />
@@ -254,16 +262,12 @@
     </tr>	
     <tr>
       <td><label for="cart_link_colour">Link colour</label></td>
-      <td><input id="cart_link_colour" name="cart_link_colour" class="color" value="#afafaf" /></td>
+      <td><input id="cart_link_colour" name="cart_link_colour" class="color" value="#41b7d8" /></td>
     </tr>	
     <tr>
       <td><label for="cart_link_hover_colour">Link hover colour</label></td>
-      <td><input id="cart_link_hover_colour" name="cart_link_hover_colour" class="color" value="#ffffff" /></td>
-    </tr>	
-    <tr>
-      <td><label for="cart_divider_colour">Divider colour</label></td>
-      <td><input id="cart_divider_colour" name="cart_divider_colour" class="color" value="#444444" /></td>
-    </tr>	
+      <td><input id="cart_link_hover_colour" name="cart_link_hover_colour" class="color" value="#41b7d8" /></td>
+    </tr>		
     <tr>
       <td><label for="cart_icon_upload">Upload a new shopping cart image (26x23px)</label></td>
       <td>
@@ -309,23 +313,19 @@
     </tr>
     <tr>
       <td><label for="nav_link_colour">Link colour</label></td>
-      <td><input id="nav_link_colour" name="nav_link_colour" class="color" value="#554b60" /></td>
+      <td><input id="nav_link_colour" name="nav_link_colour" class="color" value="#333333" /></td>
     </tr>
     <tr>
       <td><label for="nav_hover_colour">Link hover colour</label></td>
-      <td><input id="nav_hover_colour" name="nav_hover_colour" class="color" value="#282c2e" /></td>
+      <td><input id="nav_hover_colour" name="nav_hover_colour" class="color" value="#41b7d8" /></td>
     </tr>
     <tr>
-      <td><label for="nav_divider_colour">Divider between nav links</label></td>
-      <td><input id="nav_divider_colour" name="nav_divider_colour" class="color" value="#554B60" /></td>
+      <td><label for="nav_link_colour">Active link background colour</label></td>
+      <td><input id="nav_active_link_bg_colour" name="nav_active_link_bg_colour" class="color" value="#41b7d8" /></td>
     </tr>
     <tr>
-      <td><label for="dropdown_bg_colour">Dropdown menu background colour</label></td>
-      <td><input id="dropdown_bg_colour" name="dropdown_bg_colour" class="color" value="#ffffff" /></td>
-    </tr>
-    <tr>
-      <td><label for="dropdown_brd_colour">Dropdown menu border colour</label></td>
-      <td><input id="dropdown_brd_colour" name="dropdown_brd_colour" class="color" value="#c5c3b3" /></td>
+      <td><label for="nav_link_colour">Active link colour</label></td>
+      <td><input id="nav_active_link_colour" name="nav_active_link_colour" class="color" value="#ffffff" /></td>
     </tr>
   </table>
 
@@ -333,13 +333,6 @@
   <hr />
 
   <h3>Social Media Icons</h3>
-  <p>
-    <label for="sm_colour">Icon colour: </label>
-    <select name="sm_colour">
-      <option value="white">Transparent White</option>
-      <option value="black">Transparent Black</option>
-    </select>
-  </p>
 
   <table class="standard-table">
     <tr>
@@ -754,29 +747,31 @@
       </td>
     </tr>          
     <tr>
-      <td><label for="grid_bg_colour">Background behind product name</label></td>
-      <td><input id="grid_bg_colour" name="grid_bg_colour" class="color" value="#3A3D3F" /></td>
+      <td><label for="grid_bg_colour">Background behind product info bar</label></td>
+      <td><input id="grid_bg_colour" name="grid_bg_colour" class="color" value="#787878" /></td>
     </tr> 
     <tr>
-      <td><label for="grid_text_colour">Text</label></td>
-      <td><input id="grid_text_colour" name="grid_text_colour" class="color" value="#aaaaaa" /></td>
-      </tr>    
+      <td><label for="grid_name_colour">Name</label></td>
+      <td><input id="grid_name_colour" name="grid_name_colour" class="color" value="#ffffff" /></td>
+    </tr>
     <tr>
-      <td><label for="grid_link_colour">Links</label></td>
-      <td><input id="grid_link_colour" name="grid_link_colour" class="color" value="#dddddd" /></td>
-    </tr>     
-    <tr>
-      <td><label for="grid_link_hover_colour">Link Hover</label></td>
-      <td><input id="grid_link_hover_colour" name="grid_link_hover_colour" class="color" value="#ffffff" /></td>
-    </tr>   
+      <td><label for="grid_status_colour">Status</label></td>
+      <td><input id="grid_status_colour" name="grid_status_colour" class="color" value="#ffffff" /></td>
+    </tr>
     <tr>
       <td><label for="grid_price_colour">Price</label></td>
       <td><input id="grid_price_colour" name="grid_price_colour" class="color" value="#ffffff" /></td>
-    </tr>    
+    </tr>
     <tr>
-      <td><label for="grid_price_background_colour">Background behind price</label></td>
-      <td><input id="grid_price_background_colour" name="grid_price_background_colour" class="color" value="#575A5B" /></td>
-    </tr>        
+      <td><label for="grid_text_colour">Text</label></td>
+      <td><input id="grid_text_colour" name="grid_text_colour" class="color" value="#aaaaaa" /></td>
+    </tr>  
+    <tr>
+      <td><label for="product_gradient_bg_upload">Upload a new background gradient image for the product info bar</label></td>
+      <td>
+        <input type="file" id="product_gradient_bg_upload" name="product-background-gradient-user-uploaded.png"  />
+      </td>
+    </tr>  
   </table>  
 </fieldset>
 
@@ -864,7 +859,13 @@
         <input type="checkbox" id="share_prod_on_googleplus" name="share_prod_on_googleplus" value="0" />      
         <label for="share_prod_on_googleplus">Google +1 button</label>
       </td>
-    </tr>     
+    </tr> 
+    <tr>
+      <td><label for="product_share_bar_divider">Divider colour</label></td>
+      <td><input id="product_share_bar_divider" name="product_share_bar_divider" class="color" value="#D8D8D7" /></td>
+    </tr>
+
+    
   </table>
  
   <br />
@@ -946,19 +947,23 @@
       <td><input id="footer_bg_colour" name="footer_bg_colour" class="color" value="#41B7D8" /></td>
     </tr> 
     <tr>
+      <td><label for="footer_headings_colour">Headings</label></td>
+      <td><input id="footer_headings_colour" name="footer_headings_colour" class="color" value="#fffff" /></td>
+    </tr>
+    <tr>
       <td><label for="footer_txt_colour">Text</label></td>
-      <td><input id="footer_txt_colour" name="footer_txt_colour" class="color" value="#777777" /></td>
+      <td><input id="footer_txt_colour" name="footer_txt_colour" class="color" value="#333333" /></td>
     </tr> 
     <tr>
       <td><label for="footer_link_colour">Link</label></td>
-      <td><input id="footer_link_colour" name="footer_link_colour" class="color" value="#AFAFAF" /></td>
+      <td><input id="footer_link_colour" name="footer_link_colour" class="color" value="#333333" /></td>
     </tr>     
     <tr>
       <td><label for="footer_link_hover_colour">Link Hover</label></td>
       <td><input id="footer_link_hover_colour" name="footer_link_hover_colour" class="color" value="#ffffff" /></td>
     </tr>  
     <tr>
-      <td><label for="body_bg_upload">Upload a new background gradient image</label></td>
+      <td><label for="footer_bg_upload">Upload a new background gradient image</label></td>
       <td>
         <input type="file" id="footer_bg_upload" name="background-gradient-user-uploaded.png"  />
       </td>
@@ -967,46 +972,60 @@
 
   <br />
   <hr />
+  
+  <h3>Columns Headings</h3>
+  <p>
+    <label for="footer_linklist">Footer headings link list:</label> 
+    <select class="linklist" name="footer_linklist">
+      <option value="footer">Footer</option>
+    </select>
+  </p>
+  <br />
+  <hr />
+<h3>Logo Column</h3>
+  <p>
+	<label for="fc_logo">Show logo?</label>
+    <input type="checkbox" id="fc_logo" name="fc_logo" value="1" checked="checked" />
+</p><p>
+	<label for="fc_logo_file.png">Logo image file</label>
+    <input type="file" id="fc_logo_file" name="fc_logo_file.png" data-max-width="740" />
+  </p>
+  <br />
+  <hr />
 
   <h3>Columns</h3>
   <table class="standard-table">
     <tr>
       <td></td>
       <td>Show?</td>
-      <td>Heading (must be the same as linkedlist names)</td>
-    </tr>
-    <tr class="even">
-      <td><strong>Logo</strong></td>
-      <td><input type="checkbox" id="fc_logo" name="fc_logo" value="1" checked="checked" /></td>
-      <td><input type="file" id="fc_logo_file" name="fc_logo_file.png" data-max-width="740" /></td>
+      <td>Heading</td>
+	  <td>Linked list</td>
     </tr>
     <tr class="odd">
-      <td><strong>Column A</strong></td>
+      <td><strong>Column 1</strong></td>
       <td><input type="checkbox" id="fc_column1" name="fc_column1" value="1" checked="checked" /></td>
-      <td><input type="text" id="fc_column1_name" name="fc_column1_name" value="col-a" class="long" /></td>
+	  <td><select class="linklist" name="footer_linklist-column1">
+      <option value="">None</option>
+    </select></td>
     </tr>
     <tr class="even">
       <td><strong>Column 2</strong></td>
       <td><input type="checkbox" id="fc_column2" name="fc_column2" value="1" checked="checked" /></td>
-      <td><input type="text" id="fc_column2_name" name="fc_column2_name" value="" class="long" /></td>
+	  <td><select class="linklist" name="footer_linklist-column2">
+      <option value="">None</option>
+    </select></td>
     </tr>
     <tr class="odd">
       <td><strong>Column 3</strong></td>
       <td><input type="checkbox" id="fc_column3" name="fc_column3" value="1" checked="checked" /></td>
-      <td><input type="text" id="fc_column3_name" name="fc_column3_name" value="" class="long" /></td>
+	  <td><select class="linklist" name="footer_linklist-column3">
+           <option value="">None</option>
+           </select>
+     </td>
     </tr>
   </table>
   
-  <br />
-  <hr />
-  
-  <h3>Footer Menu</h3>
-  <p>
-    <label for="footer_linklist">Footer link list:</label> 
-    <select class="linklist" name="footer_linklist">
-      <option value="footer">Footer</option>
-    </select>
-  </p>
+
 
   <br />
   <hr />

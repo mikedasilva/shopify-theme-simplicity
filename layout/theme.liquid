@@ -74,6 +74,7 @@
 	    <header id="top" class="clearfix">
 	
 			<!-- Navbar -->
+			<nav>
 			<div class="navbar navbar-fixed-top">
 				<div class="navbar-inner">
 					<div class="container">
@@ -98,6 +99,10 @@
 								{%if settings.sm_twitter %}<a href="{{settings.sm_twitter_link}}">{{'glyphicons_321_twitter_t.png' | asset_url | img_tag}}</a>{% endif %}
 							</div>
 							{% endif %}
+						<!--	<div class="social-icons" >
+								<ul id="sm-icons" class="unstyled"><li id="sm-twitter"><a></a></li></ul>
+							</div>
+						-->
 							<div class="cart-icons cart-link">
 								<a class="icon" href="/cart" title="View Shopping Cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }}</a>
 							</div>
@@ -105,6 +110,7 @@
 					</div>
 				</div>
 			</div>
+			</nav>
 
 	    </header>
     
@@ -126,9 +132,8 @@
 					{% endif %}
 				
 					{% for link in linklists.[settings.footer_linklist].links %}
-
 					{% capture colindex %}fc_column{{ forloop.index }}{% endcapture %}
-					{% capture colname %}{{ colindex }}_name{% endcapture %}
+					{% capture colname %}footer_linklist-column{{ forloop.index }}{% endcapture %}
 					{% capture collist %}{{settings.[colname]}}{% endcapture %}
 					{% if settings.[colindex] %}
 					<div class="span3">

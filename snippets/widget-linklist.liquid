@@ -1,0 +1,17 @@
+{% assign list = linklists.[widget-linklist] %}
+
+<div class="widget widget-linklist">
+  <div class="widget-header">
+    <h3>{{ list.title | escape }}</h3>
+  </div>
+  <div class="widget-content">
+    <ul>
+    {% for link in list.links %}
+      <li>
+        <span class="arrow"></span>
+        <a href="{{ link.url }}" title="{{ link.title | escape }}">{{ link.title | escape }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>    
+</div><!-- /.widget -->
